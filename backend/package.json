@@ -1,0 +1,44 @@
+{
+  "name": "notification-service",
+  "version": "1.0.0",
+  "description": "notification interface between each services and provides real time messages through notifications",
+  "main": "yes",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/subscriber/consumer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Professor-Alfred-Hetsron/notification-service.git"
+  },
+  "keywords": [
+    "notification",
+    "messages",
+    "publish",
+    "subscribe"
+  ],
+  "author": "Alfred Amanda Borex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Professor-Alfred-Hetsron/notification-service/issues"
+  },
+  "homepage": "https://github.com/The-Professor-Alfred-Hetsron/notification-service#readme",
+  "dependencies": {
+    "aes256": "^1.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "pulsar-client": "^1.8.0",
+    "redis": "^4.6.5",
+    "redis-om": "^0.3.6",
+    "socket.io": "^4.5.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.0"
+  }
+}

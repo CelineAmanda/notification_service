@@ -1,0 +1,38 @@
+.alert{
+    padding: 20px;
+    color: white;
+    width: 75vw;
+}
+
+.service-name{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.closebtn{
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.alert-content{
+    display: flex;
+    gap: 10px;
+}
+
+.alert-status{
+    font-weight: bold;
+}
+
+.alert-msg{
+    font-size: 15px;
+}
