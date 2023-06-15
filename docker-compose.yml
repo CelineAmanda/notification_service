@@ -1,0 +1,50 @@
+version: '3.5'
+
+services:
+  pulsar:
+    image: "apachepulsar/pulsar:2.10.1"
+    command: bin/pulsar standalone
+    environment:
+      PULSAR_MEM: "-Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g"
+    volumes:
+      - ./pulsar/data:/pulsar/data
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - pulsar_network
+      
+  cassandra:
+    image: "cassandra:3.0"
+    ports:
+      - "9042:9042"
+    restart: unless-stopped
+    networks:
+      - cassandra_network
+
+  redis:
+    image: redis
+    command: redis-server
+    volumes:
+      - ./redis/data:/redis/data
+    environment:
+      - REDIS_PASSWORD=fantasy_redis
+      - REDIS_PORT_NUMBER=6379
+    hostname: redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - redis_network 
+  
+networks:
+  pulsar_network:
+    name: pulsar_network
+    driver: bridge 
+  redis_network:
+    name: redis_network
+    driver: bridge 
+  cassandra_network:
+    name: cassandra_network
+    driver: bridge 
